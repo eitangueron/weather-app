@@ -1,0 +1,21 @@
+#saved-cities{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 15px;
+}
+
+#new-cities{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 15px;
+}
+
+.city{
+    border: 2px solid black;
+    border-radius: 3px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}

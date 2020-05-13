@@ -15,5 +15,4 @@ const City = mongoose.model('City',citySchema)
 
 
 
-
 module.exports = City

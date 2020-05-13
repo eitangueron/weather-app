@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Weather Bro</title>
+</head>
+<body>
+    
+
+    <input type="text" id="city-search-input">
+    <button id="search-city-button">Search</button>
+
+    <div id="saved-cities"></div>
+    <div id="new-cities"></div>
+
+    <script id="city-template" type="text/x-handlebars-template">
+        <div id="{{name}}" class="city" data-name={{name}} data-temperature={{temperature}} data-condition={{condition}} data-conditionPic={{conditionPic}}>
+            <h1>{{name}}</h1>
+            <h3>{{temperature}}</h3>
+            <p>{{condition}}</p>
+            <button class="save-button">Save</button>
+            <button class="remove-button">Remove</button>
+            <img src="{{conditionPic}}">
+        </div>
+    </script>
+
+
+
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="renderer.js"></script>
+    <script src="logic.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

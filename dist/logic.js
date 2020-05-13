@@ -14,9 +14,11 @@ class Logic{
         this.cityData.push(cityData)
     }
 
-    saveCity(cityObj){
-        $.post('/city',cityObj)
+    saveCity(cityName){
+        const city = this.cityData.find(city => city.name === cityName)
+        $.post('/city',city)
     }
+
 
     removeCity(cityName){
         $.ajax({

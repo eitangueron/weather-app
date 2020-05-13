@@ -18,21 +18,19 @@ const handleSearch  = async function(cityName){
 
 loadPage()
 
+
 $('#search-city-button').on('click',function () {
     handleSearch($('#city-search-input').val())
 })
 
+
 $('#new-cities').on('click','.save-button',function(){
-    const city = $(this).closest('.city').data()
-    city['conditionPic'] = city.conditionpic
+    const city = $(this).closest('.city').data().id
     logic.saveCity(city)
-    console.log(city)
 })
 
 
-
-$('#saved-cities').on('click','.remove-button',function(){
-    const cityName = $(this).closest('.city').data().name
+$('#saved-cities').on('click','.remove-button',function(){          
+    const cityName = $(this).closest('.city').data().id
     logic.removeCity(cityName)
-    console.log(cityName)
 })

@@ -2,7 +2,7 @@ const express= require('express')
 const router = express.Router()
 const axios = require('axios')
 const request = require('request')
-const City = require('../models/City')
+const City = require('../models/city')
 
 
 const apiKey = '529a0ccf8aa2f3ad27e2a79e9362da11'

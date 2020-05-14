@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- <script src="https://kit.fontawesome.com/92cbda4984.js" crossorigin="anonymous"></script> -->
     <title>Weather Bro</title>
 </head>
 <body>
     
+    <div id="nav-bar">
+        <input type="text" id="city-search-input" placeholder="Desierd city name:">
+        <button id="search-city-button">Search</button>
+    </div>
 
-    <input type="text" id="city-search-input">
-    <button id="search-city-button">Search</button>
-
+    <hr>
+    
     <div id="saved-cities"></div>
+
     <div id="new-cities"></div>
 
+
+
     <script id="city-template" type="text/x-handlebars-template">
-        <div data-id="{{name}}" class="city">
-            <h1>{{name}}</h1>
-            <h3>{{temperature}}</h3>
-            <p>{{condition}}</p>
-            <button class="save-button">Save</button>
-            <button class="remove-button">Remove</button>
-            <img src="{{conditionPic}}">
+        <div data-id="{{name}}" class="city" style="background-image: url({{backgroundImageUrl}});">
+            <div class="left-side">
+                <h1 class="city-name">{{name}}</h1>
+                <button class="save-button add-to-fav-btn">Save</button>
+                <button class="remove-button delete-fav-btn">Remove</button>
+            </div>
+            <div class="center-side">
+            </div>
+            <div class="right-side">
+                <h3 class="city-temp">{{temperature}}&deg</h3>
+            </div>
         </div>
     </script>
 

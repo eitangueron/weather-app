@@ -4,7 +4,7 @@ const render = new Renderer()
 
 
 const loadPage = function(){
-    $('#city-weathers').empty()
+    $('#saved-cities').empty()
     logic.getDataFromDB().then(savedCities => savedCities.forEach(city => render.renderData(city,'saved-cities')))
 }
 
@@ -17,6 +17,9 @@ const handleSearch  = async function(cityName){
 
 
 loadPage()
+// setTimeout(function(){
+//     loadPage()
+// },3000)
 
 
 $('#search-city-button').on('click',function () {

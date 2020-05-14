@@ -14,7 +14,7 @@ router.get('/city/:cityName',async function(req,res){
     const iconCode = cityWeather.data.weather[0].icon
     const finalCityWeather = {
         name: cityWeather.data.name,
-        temperature: cityWeather.data.main.temp,                //round??
+        temperature: Math.round(cityWeather.data.main.temp),                
         condition: cityWeather.data.weather[0].description,
         conditionPic: `http://openweathermap.org/img/wn/${iconCode}@2x.png`
     }
@@ -36,7 +36,16 @@ router.post('/city',function(req,res){
 })
 
 
-/// error handling ! y async ?
+// router.put('/city/:cityName',async function(req,res){
+//     const cityName = req.params.cityName
+//     const cityWeather = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=Metric&appid=${apiKey}`)
+//     const newCityWeather = {
+//         name: cityWeather.data.name,
+//         temperature: Math.round(cityWeather.data.main.temp),                
+//         condition: cityWeather.data.weather[0].description,
+//         conditionPic: `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+//     }
+// })
 
 router.delete('/city/:cityName',async function(req,res){
     const cityName = req.params.cityName

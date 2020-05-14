@@ -28,7 +28,3 @@ class Logic{
     }
 
 }
-
-// const logic = new Logic()
-
-// logic.getCityData('london').then(() => console.log(logic.cityData))

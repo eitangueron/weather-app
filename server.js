@@ -5,7 +5,8 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/citys',{ useNewUrlParser: true , useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI|| 'mongodb://localhost/citys',{ useNewUrlParser: true , useUnifiedTopology: true})
+
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
@@ -26,6 +27,6 @@ app.use('/',api)
 
 
 const port = 3000
-app.listen(port,function(){
+app.listen(process.env.PORT || port,function(){
     console.log(`server is up and running on port ${port}`)
 })

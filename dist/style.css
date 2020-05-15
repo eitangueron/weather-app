@@ -46,7 +46,7 @@ i{
     font-size: 40px;
 } */
 
-#left-side{
+.left-side{
     display: grid;
     grid-template-areas: 
     "a a"

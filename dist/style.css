@@ -30,6 +30,7 @@ body{
     font-size: 40px;
     width: max-content;
     padding-left: 4px;
+    grid-area: a;
 }
 
 .city-temp{
@@ -45,6 +46,13 @@ i{
     font-size: 40px;
 } */
 
+#left-side{
+    display: grid;
+    grid-template-areas: 
+    "a a"
+    "s d";
+}
+
 .save-button, .remove-button{
     background-color: inherit;
     border-radius: 80%;
@@ -52,11 +60,17 @@ i{
     font-weight: 600;
 }
 
+.remove-button{
+    grid-area: d;
+}
+
 .save-button{
     position: relative;
     bottom: 0px;
     left: 0px;
+    grid-area: s;
 }
+
 
 .weather-description{
     display: inline;

@@ -11,12 +11,12 @@ const apiKey = '529a0ccf8aa2f3ad27e2a79e9362da11'
 router.get('/city/:cityName',async function(req,res){
     const cityName = req.params.cityName
     const cityWeather = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=Metric&appid=${apiKey}`)
-    const iconCode = cityWeather.data.weather[0].icon
+    // const iconCode = cityWeather.data.weather[0].icon
     const finalCityWeather = {
         name: cityWeather.data.name,
         temperature: Math.round(cityWeather.data.main.temp),                
         condition: cityWeather.data.weather[0].description,
-        conditionPic: `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+        // conditionPic: `http://openweathermap.org/img/wn/${iconCode}@2x.png`
     }
     res.send(finalCityWeather)
 }) 
